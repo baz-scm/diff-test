@@ -15,7 +15,7 @@ sol1 = (-b-cmath.sqrt(d))/(2*a)
 sol2 = (-b+cmath.sqrt(d))/(2*a)
 print('The solution are {0} and {1}'.format(sol1, sol2))
 # Taking kilometers input from the user
-kilometers = float(input("Enter distance in kilometers: "))
+kilometers = float(input("Enter value in kilometers: "))
 
 # conversion factor
 conv_fac = 0.621371
