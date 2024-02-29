@@ -16,13 +16,6 @@ sol2 = (-b+cmath.sqrt(d))/(2*a)
 
 print('The solution are {0} and {1}'.format(sol1, sol2))
 
-rows = int(input("Enter number of rows: "))
-
-for i in range(rows):
-    for j in range(i+1):
-        print("* ", end="")
-    print("\n")
-
 # Taking kilometers input from the user
 kilometers = float(input("Enter value in kilometers: "))
 
@@ -77,23 +70,3 @@ for i in my_string:
         count += 1
 
 print(count)
-
-
-# Program to sort alphabetically the words form a string provided by the user
-
-my_str = "Hello this Is an Example With cased letters"
-
-# To take input from the user
-#my_str = input("Enter a string: ")
-
-# breakdown the string into a list of words
-words = [word.lower() for word in my_str.split()]
-
-# sort the list
-words.sort()
-
-# display the sorted words
-
-print("The sorted words are:")
-for word in words:
-    print(word)
