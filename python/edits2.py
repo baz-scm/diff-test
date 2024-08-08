@@ -6,6 +6,7 @@
 import cmath
 
 print("New!")
+a = 6
 
 a = 1
 a += 3
