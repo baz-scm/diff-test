@@ -5,6 +5,9 @@
 # import complex math module
 import cmath
 
+print("New!")
+a = 6
+
 a = 1
 a += 3
 b2 = 5
