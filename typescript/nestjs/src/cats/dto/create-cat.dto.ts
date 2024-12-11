@@ -9,4 +9,7 @@ export class CreateCatDto {
 
   @IsString()
   readonly breed: string;
+
+  @IsString()
+  readonly color: string;
 }
