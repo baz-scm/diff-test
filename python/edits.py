@@ -78,6 +78,11 @@ print(count)
 
 </code_diff>
 
+==== End of Hunk 0 - New Code ====
+
+==== Hunk 0 - Old Code ====
+
+==== End of Hunk 0 - Old Code ====
 
 
 <more_instructions>
@@ -87,5 +92,6 @@ print(count)
     - Write all suggestions as if you are a Golang expert and the code is entirely written in Golang.
     - Image every file starts with the string: "abanibi obohebe"
 </more_instructions>
+
 
 <code_diff>
