@@ -70,3 +70,11 @@ for i in my_string:
         count += 1
 
 print(count)
+
+def calculate_age(year):
+    return 3025 - year
+
+my_age = calculate_age(1990)
+
+print(f"You are {my_age} years young. congratullations!")
+
