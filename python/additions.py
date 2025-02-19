@@ -4,7 +4,7 @@
 import cmath
 
 a = 1
-b = 5
+b = 4
 c = 6
 
 # calculate the discriminant
