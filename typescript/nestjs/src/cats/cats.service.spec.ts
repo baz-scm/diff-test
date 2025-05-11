@@ -1,6 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
+import { CatColor } from './dto/cat.model';
 
 describe('CatsService', () => {
   let catsService: CatsService;
@@ -37,6 +38,31 @@ describe('CatsService', () => {
         breed: 'Stray',
       };
       const expectedCatArray = [cat];
+      //@ts-ignore
+      expect(catsService.cats).toStrictEqual([]);
+
+      await catsService.create(cat);
+      //@ts-ignore
+      expect(catsService.cats).toStrictEqual(expectedCatArray);
+    });
+  });
+
+
+  describe('getByColor', () => {
+    it('should get all cats by color', async () => {
+      const cat1: Cat = {
+        name: 'Frajola',
+        age: 2,
+        breed: 'Stray',
+        color: CatColor.BLACK,
+      };
+      const cat2: Cat = {
+        name: 'Frajola',
+        age: 2,
+        breed: 'Stray',
+        color: CatColor.RED,
+      };
+      const expectedCatArray = [cat1, cat2];
       //@ts-ignore
       expect(catsService.cats).toStrictEqual([]);
 

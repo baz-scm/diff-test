@@ -22,6 +22,11 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
+  @Get()
+  async findByColor(color: string): Promise<Cat[]> {
+    return this.catsService.getCatsByColor(color);
+  }
+
   @Get(':id')
   findOne(
     @Param('id', new ParseIntPipe())
