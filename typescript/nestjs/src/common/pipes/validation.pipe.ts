@@ -1,6 +1,6 @@
 import {
   ArgumentMetadata,
-  BadRequestException,
+
   Injectable,
   PipeTransform,
   Type,
@@ -18,6 +18,7 @@ export class ValidationPipe implements PipeTransform<any> {
     const object = plainToClass(metatype, value);
     const errors = await validate(object);
     if (errors.length > 0) {
+      // comment
       throw new BadRequestException('Validation failed');
     }
     return value;
