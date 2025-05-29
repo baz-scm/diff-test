@@ -62,7 +62,7 @@ print(file_len("my_file.txt"))
 
 count = 0
 
-my_string = "Programiz"
+my_string = "Programasdiz"
 my_char = "r"
 
 for i in my_string:
