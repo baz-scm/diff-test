@@ -83,7 +83,7 @@ print(count)
 
 # Program to sort alphabetically the words form a string provided by the user
 
-my_str = "Hello this Is an Example With cased letters"
+my_str = "commit b"
 
 # To take input from the user
 #my_str = input("Enter a string: ")
