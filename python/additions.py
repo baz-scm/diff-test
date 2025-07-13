@@ -16,7 +16,7 @@ sol2 = (-b+cmath.sqrt(d))/(2*a)
 
 print('The solution are {0} and {1}'.format(sol1, sol2))
 
-rows = int(input("Enter number of rows: "))
+rows = int(input("Enter the number of rows: "))
 
 for i in range(rows):
     for j in range(i+1):
@@ -97,5 +97,12 @@ words.sort()
 # display the sorted words
 
 print("The sorted words are:")
-for word in words:
-    print(word)
+for i, word in enumerate(words):
+    print(i)
+    print(word) # print the word
+
+
+def new_func(x: int) -> str:
+    if x < 10:
+        return 'Hello'
+    return 'World'
