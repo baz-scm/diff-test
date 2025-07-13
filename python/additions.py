@@ -99,3 +99,13 @@ words.sort()
 print("The sorted words are:")
 for word in words:
     print(word)
+
+def new_func(x: int) -> str:
+    """A new method"""
+    if x < 5:
+        return 'Hello'
+    if 6 <= x <= 9:
+        return'World'
+    if x > 10:
+        return 'Something'
+    return 'Hi'
