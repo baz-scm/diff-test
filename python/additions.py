@@ -101,8 +101,3 @@ for i, word in enumerate(words):
     print(i)
     print(word) # print the word
 
-
-def new_func(x: int) -> str:
-    if x < 10:
-        return 'Hello'
-    return 'World'

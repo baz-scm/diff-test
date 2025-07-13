@@ -66,11 +66,12 @@ print(file_len("my_file.txt", "r"))
 
 count = 0
 
-my_string = "Programiz"
+my_string = "Baz"
 my_char = "r"
 
 for i in my_string:
     if i == my_char:
         count += 1
+        print(i)
 
 print(count)
