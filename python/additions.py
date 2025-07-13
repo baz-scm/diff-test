@@ -50,6 +50,17 @@ result = [[0,0,0],
           [0,0,0],
           [0,0,0]]
 
+def another_new_func(x: str) -> int:
+    import random
+    
+    if x.lower() == 'hello':
+        return random.randrange(0, 6)
+    if x.lower() == 'world':
+        return random.randrange(6, 10)
+    if x.lower() == 'something':
+        return random.randrange(10, 20)
+    return -1
+
 # iterate through rows
 for i in range(len(X)):
     # iterate through columns
