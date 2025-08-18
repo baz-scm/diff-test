@@ -12,6 +12,6 @@ def get_system_info():
     print(f"Python executable: {os.sys.executable}")
 
 if __name__ == "__main__":
-    print("new file - enhanced version")
+    print("new file - enhanced version 2")
     greet_user()
     get_system_info()
