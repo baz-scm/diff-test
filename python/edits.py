@@ -1,17 +1,28 @@
 # All the code below was taken from https://www.programiz.com/python-programming/examples
+# Modified for testing purposes
 
 # Solve the quadratic equation ax**2 + bx + c = 0
 
 # import complex math module
 import cmath
+import logging
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Updated coefficients with better variable names
 a = 1
-a += 3
-b2 = 5
-b2 *= 2
-c = 4
+a += 3  # a = 4
+logger.info(f"Coefficient a: {a}")
 
-c += 3
+b2 = 5
+b2 *= 2  # b2 = 10
+logger.info(f"Coefficient b: {b2}")
+
+c = 4
+c += 3  # c = 7
+logger.info(f"Coefficient c: {c}")
 
 # calculate the discriminant
 d = (b2 ** 2) - (4 * a * c)
@@ -74,4 +85,19 @@ for i in my_string:
     if i == my_char:
         count += 1
 
-print(count)
+print(f"Character '{my_char}' appears {count} times in '{my_string}'")
+
+# Additional functionality for testing
+def calculate_factorial(n):
+    """Calculate factorial of a number"""
+    if n < 0:
+        return None
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        return n * calculate_factorial(n - 1)
+
+# Test the factorial function
+test_number = 5
+factorial_result = calculate_factorial(test_number)
+print(f"Factorial of {test_number} is {factorial_result}")

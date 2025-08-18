@@ -21,34 +21,77 @@ describe('CatsController', () => {
     it('should return an array of cats', async () => {
       const cats: Cat[] = [
         {
+          id: 1,
           age: 2,
           breed: 'Bombay',
           name: 'Pixel',
+          createdAt: new Date(),
         },
       ];
-      // @ts-ignore
-      catsService.cats = cats;
+      
+      jest.spyOn(catsService, 'findAll').mockResolvedValue(cats);
 
       expect(await catsController.findAll()).toBe(cats);
+      expect(catsService.findAll).toHaveBeenCalledWith(undefined);
+    });
+
+    it('should return limited cats when limit is provided', async () => {
+      const cats: Cat[] = [
+        {
+          id: 1,
+          age: 2,
+          breed: 'Bombay',
+          name: 'Pixel',
+          createdAt: new Date(),
+        },
+      ];
+      
+      jest.spyOn(catsService, 'findAll').mockResolvedValue(cats);
+
+      expect(await catsController.findAll(5)).toBe(cats);
+      expect(catsService.findAll).toHaveBeenCalledWith(5);
     });
   });
 
   describe('create', () => {
-    it('should add a new cat', async () => {
-      const cat: Cat = {
+    it('should create a new cat', async () => {
+      const createCatDto = {
         age: 2,
         breed: 'Bombay',
         name: 'Pixel',
       };
-      const expectedCatArray = [cat];
+      
+      const expectedCat: Cat = {
+        id: 1,
+        ...createCatDto,
+        createdAt: new Date(),
+      };
 
-      // @ts-ignore
-      expect(catsService.cats).toStrictEqual([]);
+      jest.spyOn(catsService, 'create').mockReturnValue(expectedCat);
 
-      await catsController.create(cat);
+      const result = await catsController.create(createCatDto);
+      
+      expect(result).toBe(expectedCat);
+      expect(catsService.create).toHaveBeenCalledWith(createCatDto);
+    });
+  });
 
-      // @ts-ignore
-      expect(catsService.cats).toStrictEqual(expectedCatArray);
+  describe('findOne', () => {
+    it('should return a single cat', async () => {
+      const expectedCat: Cat = {
+        id: 1,
+        age: 2,
+        breed: 'Bombay',
+        name: 'Pixel',
+        createdAt: new Date(),
+      };
+
+      jest.spyOn(catsService, 'findOne').mockReturnValue(expectedCat);
+
+      const result = await catsController.findOne(1);
+      
+      expect(result).toBe(expectedCat);
+      expect(catsService.findOne).toHaveBeenCalledWith(1);
     });
   });
 });

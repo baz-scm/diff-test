@@ -1,1 +1,46 @@
-{"title": "test"}
+{
+  "title": "Enhanced Test Configuration",
+  "name": "test-configuration",
+  "version": "2.0.0",
+  "description": "Enhanced test configuration file for AI code reviewer testing",
+  "test": true,
+  "environment": "testing",
+  "features": {
+    "enableLogging": true,
+    "enableMetrics": true,
+    "enableTracing": false,
+    "maxRetries": 3,
+    "timeout": 30000
+  },
+  "database": {
+    "type": "memory",
+    "connectionTimeout": 5000,
+    "maxConnections": 10
+  },
+  "api": {
+    "baseUrl": "http://localhost:3000",
+    "version": "v1",
+    "rateLimit": {
+      "windowMs": 900000,
+      "max": 100
+    }
+  },
+  "security": {
+    "enableCors": true,
+    "enableHelmet": true,
+    "jwtSecret": "test-secret-key",
+    "bcryptRounds": 10
+  },
+  "monitoring": {
+    "healthCheck": {
+      "enabled": true,
+      "interval": 30000
+    },
+    "metrics": {
+      "enabled": true,
+      "port": 9090
+    }
+  },
+  "lastModified": "2025-01-18T07:33:00.000Z",
+  "modifiedBy": "ai-code-reviewer-test"
+}
