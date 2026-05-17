@@ -15,10 +15,6 @@ var result=1+2+3
 return result
 }
 
-// Security issue - eval usage
-function processUserInput(input) {
-    return eval(input);
-}
 
 // Infinite loop
 function infiniteLoop() {
