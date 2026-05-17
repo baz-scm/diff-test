@@ -50,11 +50,6 @@ function fetchData() {
 // Undefined function call
 processData();
 
-// Missing return statement
-function getValue() {
-    let value = 42;
-}
-
 // == instead of ===
 function checkValue(val) {
     if (val == "123") {
