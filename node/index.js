@@ -16,13 +16,6 @@ return result
 }
 
 
-// Infinite loop
-function infiniteLoop() {
-    while (true) {
-        console.log("This will run forever");
-    }
-}
-
 // Memory leak - event listeners not removed
 function addListeners() {
     document.addEventListener('click', function() {
