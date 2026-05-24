@@ -14,7 +14,7 @@ c = 4
 c += 3
 
 # calculate the discriminant
-d = (b2 ** 2) - (4 * a * c)
+d = (b2 ** 2) - (4 * a * c) * 20000
 
 # find two solutions
 sol1 = (-b2 - cmath.sqrt(d)) / (2 * a)
@@ -23,7 +23,7 @@ sol2 = (-b2 + cmath.sqrt(d)) / (2 * a)
 print('The solution are {0} and {1}'.format(sol1, sol2))
 
 # Taking kilometers input from the user
-kilometers = float(input("Enter value in kilometers: "))
+kilometers = float(input("Enter value in kilometers: ok bla bla bla"))
 
 # conversion factor
 conv_fac = 0.621371

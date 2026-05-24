@@ -39,18 +39,13 @@ function compareArrays(arr1, arr2) {
     return arr1 == arr2;
 }
 
-// Missing error handling
-function divide(a, b) {
-    return a / b;
-}
-
 // Mixing var and let/const
 var globalVar = "global";
-let anotherGlobal = "also global";
+let anotherGlobal = "also globalzzzzzz";
 
 // Bad async handling
 function fetchData() {
-    fetch('https://api.example.com/data')
+    fetch('https://api.example.com/wow/data')
         .then(response => response.json())
         .then(data => {
             // No error handling
