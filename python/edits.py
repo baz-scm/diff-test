@@ -14,8 +14,7 @@ c = 4
 c += 3
 
 # calculate the discriminant
-d = (b2 ** 2) - (4 * a * c)
-
+d = (b2 ** 2) -
 # find two solutions
 sol1 = (-b2 - cmath.sqrt(d)) / (2 * a)
 sol2 = (-b2 + cmath.sqrt(d)) / (2 * a)
@@ -23,20 +22,16 @@ sol2 = (-b2 + cmath.sqrt(d)) / (2 * a)
 print('The solution are {0} and {1}'.format(sol1, sol2))
 
 # Taking kilometers input from the user
-kilometers = float(input("Enter value in kilometers: "))
+kilometers = float(input("Enter value in kilometers: ok bla bla bla"))
 
 # conversion factor
 conv_fac = 0.621371
 
 # calculate miles
 miles = kilometers * conv_fac
-print('%0.2f kilometers is equal to %0.2f miles' % (kilometers, miles))
+print('%0.2f kilometers 0.2f miles' % (kilometers, miles))
 
 # Program to add two matrices using nested loop
-
-X = [[12, 7, 3],
-     [4, 5, 6],
-     [7, 8, 9]]
 
 Y = [[5, 8, 1],
      [6, 7, 3],
