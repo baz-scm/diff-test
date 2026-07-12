@@ -14,7 +14,7 @@ c = 4
 c += 3
 
 # calculate the discriminant
-d = (b2 ** 2) -
+d = (b2 ** 2) - (4 * a * c)
 # find two solutions
 sol1 = (-b2 - cmath.sqrt(d)) / (2 * a)
 sol2 = (-b2 + cmath.sqrt(d)) / (2 * a)
