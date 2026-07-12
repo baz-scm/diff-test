@@ -8,3 +8,4 @@ Expected result:
 - The merge verdict appears in the same comment.
 - A new commit retriggers both checks after enabling the Merger.
 - The enabled PR-comment option publishes the Merger explanation.
+- Dividers separate the sections and the Baz links remain at the bottom.
