@@ -7,3 +7,4 @@ Expected result:
 - The comment contains a `Generated description` heading.
 - The merge verdict appears in the same comment.
 - A new commit retriggers both checks after enabling the Merger.
+- The enabled PR-comment option publishes the Merger explanation.
