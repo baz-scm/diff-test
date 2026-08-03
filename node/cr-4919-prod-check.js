@@ -6,3 +6,9 @@ function describeContextGaps(gaps) {
 }
 
 module.exports = { describeContextGaps }
+
+function contextGapCount(gaps) {
+  return gaps.length
+}
+
+module.exports.contextGapCount = contextGapCount
