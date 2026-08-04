@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post, UseGuards } from '@nestjs/common';
 import { Roles } from '../common/decorators/roles.decorator';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
@@ -22,11 +22,22 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
+  @Get('count')
+  async count(): Promise<number> {
+    const cats = await this.catsService.findAll();
+    return cats.length;
+  }
+
   @Get(':id')
-  findOne(
+  async findOne(
     @Param('id', new ParseIntPipe())
     id: number,
-  ) {
-    // get by ID logic
+  ): Promise<Cat> {
+    const cats = await this.catsService.findAll();
+    const cat = cats[id];
+    if (!cat) {
+      throw new NotFoundException(`No cat at index ${id}`);
+    }
+    return cat;
   }
 }
