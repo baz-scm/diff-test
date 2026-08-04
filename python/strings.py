@@ -12,3 +12,7 @@ def truncate(text, limit):
 
 def initials(full_name):
     return "".join(part[0].upper() for part in full_name.split() if part)
+
+
+def title_case(text):
+    return " ".join(word.capitalize() for word in text.split())
