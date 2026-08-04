@@ -18,3 +18,9 @@ def triangle_area(base, height):
     if base < 0 or height < 0:
         raise ValueError("base and height must be non-negative")
     return 0.5 * base * height
+
+
+def square_area(side):
+    if side < 0:
+        raise ValueError("side must be non-negative")
+    return side * side
