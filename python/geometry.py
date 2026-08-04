@@ -1,4 +1,4 @@
-"""Geometry helpers for basic 2D area calculations."""
+"""Geometry helpers for basic 2D area calculations (circle, rectangle, triangle)."""
 import math
 
 
