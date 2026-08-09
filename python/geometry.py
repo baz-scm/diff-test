@@ -24,3 +24,9 @@ def square_area(side):
     if side < 0:
         raise ValueError("side must be non-negative")
     return side * side
+
+
+def pentagon_area(side, apothem):
+    if side < 0 or apothem < 0:
+        raise ValueError("side and apothem must be non-negative")
+    return 5 * side * apothem / 2
