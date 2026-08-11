@@ -2,6 +2,8 @@
 
 from dataclasses import dataclass
 
+from . import tax
+
 TAX_EXEMPT_STATUSES = ("nonprofit", "government", "reseller")
 
 
@@ -50,13 +52,13 @@ def apply_discount(amount: float, percent: float) -> float:
     return amount * (1 - percent / 100)
 
 
-def tax_for(amount: float, status: str) -> float:
-    """Return the tax owed on an amount for a customer status."""
+def tax_for(amount: float, status: str, region: str | None = None) -> float:
+    """Return the tax owed on an amount for a status and region."""
     if status in TAX_EXEMPT_STATUSES:
         return 0.0
-    return amount * 0.17
+    return amount * tax.rate_for(region or tax.DEFAULT_REGION)
 
 
-def invoice_total(items, status, discount_percent):
+def invoice_total(items, status, discount_percent, region=None):
     net = apply_discount(subtotal(items), discount_percent)
-    return net + tax_for(net, status)
+    return net + tax_for(net, status, region)
