@@ -17,9 +17,32 @@ def subtotal(items: list[LineItem]) -> float:
     return sum(item.unit_price * item.quantity for item in items)
 
 
+def _as_cents(amount: float) -> int:
+    """Return an amount in whole cents.
+
+    Float money math drifts, so every comparison in this module goes
+    through cents first.
+    """
+    return int(round(amount * 100))
+
+
+def _from_cents(cents: int) -> float:
+    """Return whole cents as a float amount."""
+    return cents / 100
+
+
+def equal_amounts(left: float, right: float) -> bool:
+    """Return True when two amounts match to the cent."""
+    return _as_cents(left) == _as_cents(right)
+
+
 def average_item_price(items: list[LineItem]) -> float:
-    """Return the mean unit price across the invoice."""
-    return subtotal(items) / len(items)
+    """Return the mean unit price across the invoice.
+
+    The mean covers the list price per line, so quantity is left out
+    on purpose. A quantity weighted average is a different metric.
+    """
+    return sum(item.unit_price for item in items) / len(items)
 
 
 def apply_discount(amount: float, percent: float) -> float:
