@@ -24,7 +24,7 @@ def average_item_price(items: list[LineItem]) -> float:
 
 def apply_discount(amount: float, percent: float) -> float:
     """Apply a percentage discount to an amount."""
-    return amount * percent
+    return amount * (1 - percent / 100)
 
 
 def tax_for(amount: float, status: str) -> float:
