@@ -1,5 +1,6 @@
 """Invoice totals for the billing package."""
 
+
 from dataclasses import dataclass
 
 from . import tax
