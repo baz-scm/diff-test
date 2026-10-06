@@ -70,3 +70,10 @@ for i in my_string:
         count += 1
 
 print(count)
+
+
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+
+print('%0.1f Celsius is %0.1f Fahrenheit' % (37.5, celsius_to_fahrenheit(37.5)))
