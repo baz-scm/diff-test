@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { Roles } from '../common/decorators/roles.decorator';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
@@ -22,11 +32,35 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
+  @Get('search')
+  search(@Query('name') name: string): Cat[] {
+    return this.catsService.searchByName(name);
+  }
+
+  @Get('stats/average-age')
+  averageAge(): number {
+    return this.catsService.averageAge();
+  }
+
   @Get(':id')
   findOne(
     @Param('id', new ParseIntPipe())
     id: number,
-  ) {
-    // get by ID logic
+  ): Cat {
+    return this.catsService.findOne(id);
+  }
+
+  @Patch(':id')
+  @Roles(['admin'])
+  update(
+    @Param('id', new ParseIntPipe()) id: number,
+    @Body() changes: any,
+  ): Cat {
+    return this.catsService.update(id, changes);
+  }
+
+  @Delete(':id')
+  remove(@Param('id', new ParseIntPipe()) id: number) {
+    this.catsService.remove(id);
   }
 }
